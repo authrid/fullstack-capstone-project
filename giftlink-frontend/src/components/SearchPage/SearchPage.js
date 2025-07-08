@@ -107,11 +107,12 @@ function SearchPage() {
                             />
                         </div>
                     </div>
-                    
+
                     {/* Task 7: Add text input field for search criteria*/}
                     <input
                         type="text"
                         className="form-control mb-2"
+                        name="searchQuery"
                         placeholder="Search for items..."
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
