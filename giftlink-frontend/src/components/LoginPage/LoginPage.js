@@ -22,7 +22,7 @@ function LoginPage() {
         e.preventDefault();
 
         try{
-            const response = await fetch(`/api/auth/login`, {
+            const response = await fetch(`${urlConfig.backendUrl}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -51,7 +51,7 @@ function LoginPage() {
                 
                 setTimeout(() => {
                     setIncorrect("");
-                }, 2000);
+                }, 5000);
             }
 
         }catch (e) {
@@ -88,7 +88,7 @@ function LoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            
+                            <span className="text-danger">{incorrect}</span>
                         </div>
                         
                         <button className="btn btn-primary w-100 mb-3" onClick={handleLogin}>Login</button>
