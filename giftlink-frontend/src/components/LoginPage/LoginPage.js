@@ -47,7 +47,8 @@ function LoginPage() {
             } else {
                 document.getElementById("email").value="";
                 document.getElementById("password").value="";
-                setIncorrect("Wrong password. Try again.");
+                // setIncorrect("Wrong password. Try again.");
+                setIncorrect(json.error);
                 
                 setTimeout(() => {
                     setIncorrect("");
