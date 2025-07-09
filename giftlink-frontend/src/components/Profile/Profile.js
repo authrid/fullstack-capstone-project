@@ -5,7 +5,7 @@ import {urlConfig} from '../../config';
 import { useAppContext } from '../../context/AuthContext';
 
 const Profile = () => {
-  const [userDetails, setUserDetails] = useState({});
+ const [userDetails, setUserDetails] = useState({});
  const [updatedDetails, setUpdatedDetails] = useState({});
  const {setUserName} = useAppContext();
  const [changed, setChanged] = useState("");
@@ -77,9 +77,7 @@ const handleSubmit = async (e) => {
     if (response.ok) {
       // Update the user details in session storage
       setUserName(updatedDetails.name);
-      
       sessionStorage.setItem("name", updatedDetails.name);
-
       setUserDetails(updatedDetails);
       setEditMode(false);
       // Display success message to the user
